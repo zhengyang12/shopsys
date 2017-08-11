@@ -75,8 +75,15 @@ WSGI_APPLICATION = 'shopsys.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+       # 'NAME': os.path.join(BASE_DIR, 'shopsys'),
+        'NAME': 'shopsys',
+        'USER': 'shopsys',
+        'PASSWORD': '123456',
+        
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
+        'TEST': {}
     }
 }
 
@@ -105,14 +112,17 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+DATE_FORMAT = 'Y-m-d'
 
-USE_I18N = True
+TIME_ZONE = 'Asia/Shanghai'
 
-USE_L10N = True
+USE_I18N = False
+
+USE_L10N = False
 
 USE_TZ = True
 
+USE_ETAGS = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
